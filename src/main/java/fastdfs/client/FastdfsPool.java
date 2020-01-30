@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  */
 final class FastdfsPool implements ChannelPool {
 
-    private static final Logger LOG = LoggerFactory.getLogger(FastdfsPoolGroup.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FastdfsPool.class);
     private final ChannelPool channelPool;
 
     FastdfsPool(Bootstrap bootstrap, long readTimeout, long idleTimeout, int maxConnPerHost, int maxPendingRequests) {

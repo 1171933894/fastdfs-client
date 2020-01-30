@@ -32,7 +32,9 @@ public final class FastdfsClient implements Closeable {
     public static final long DEFAULT_CHECK_TIMEOUT = 3000;
     public static final long DEFAULT_CHECK_INTERVAL = 10000;
 
+    // fastdfs连接池
     private final FastdfsExecutor executor;
+    // 猜测是心跳测试线程池
     private final FastdfsScheduler scheduler;
 
     private final TrackerClient trackerClient;

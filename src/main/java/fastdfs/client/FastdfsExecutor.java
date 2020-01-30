@@ -37,6 +37,7 @@ final class FastdfsExecutor implements Closeable {
 
     FastdfsExecutor(FastdfsSettings settings) {
         loopGroup = new NioEventLoopGroup(settings.maxThreads(), new ThreadFactory() {
+            // 在匿名类里面除了需要实现接口方法外，还可以定义局部变量
             final String threadPrefix = "fastdfs-";
             final AtomicInteger threadNumber = new AtomicInteger(1);
 
