@@ -734,6 +734,7 @@ public final class FastdfsClient implements Closeable {
     }
 
     /**
+     * 使用建造者模式
      * @return
      */
     public static Builder newBuilder() {
@@ -800,8 +801,8 @@ public final class FastdfsClient implements Closeable {
 
         /**
          *
-         * @param fall times after check failure, the server is marked down.
-         * @param rise times after check success, the server is marked up.
+         * @param fall times after check failure（检查失败的次数）, the server is marked down.
+         * @param rise times after check success（检查成功的次数）, the server is marked up.
          * @param checkTimeout
          * @param checkInterval
          * @return

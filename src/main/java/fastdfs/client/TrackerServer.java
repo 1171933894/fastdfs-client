@@ -6,11 +6,12 @@ import java.util.Objects;
 /**
  * @author siuming
  */
+// 抽象TrackerServer
 public class TrackerServer {
 
-    private String host;
-    private int port;
-    private int weight;
+    private String host;// ip或域名
+    private int port;// 端口
+    private int weight;// 权重
 
     /**
      * @param host

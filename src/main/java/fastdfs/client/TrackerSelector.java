@@ -1,8 +1,7 @@
 package fastdfs.client;
 
 import java.util.List;
-import java.util.Random;
-
+import java.util.concurrent.ThreadLocalRandom;
 
 public enum TrackerSelector {
 
@@ -17,11 +16,12 @@ public enum TrackerSelector {
 
     },
     RANDOM {
-        private final Random random = new Random();
+        // private final Random random = new Random(); // 优化原因：并发性能低。
+        private final ThreadLocalRandom threadLocalRandom = ThreadLocalRandom.current();
 
         @Override
         public TrackerServer select(List<TrackerServer> list) {
-            return list.get(random.nextInt(list.size()));
+            return list.get(threadLocalRandom.nextInt(list.size()));
         }
 
     },
